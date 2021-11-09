@@ -4,8 +4,11 @@
  */
 const routes = {
   "#/": "home",
+  "#/attractions": "attractions",
+  "#/food": "food",
+  "#/activities": "activities",
   "#/map": "map",
-  "#/settings": "settings",
+  "#/favourites": "favourites",
   "#/detailedView": "detailedView",
 };
 
@@ -41,7 +44,7 @@ function attachNavLinkEvents() {
 /**
  * Navigating SPA to specific page by given pathnameß
  */
-export function navigateTo(pathname) {
+function navigateTo(pathname) {
   hideAllPages();
   const basePath = location.pathname.replace("index.html", "");
   window.history.pushState({}, pathname, basePath + pathname);
@@ -72,5 +75,3 @@ function setActiveTab(pathname) {
     }
   }
 }
-
-
