@@ -1,78 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <title></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <link rel="stylesheet" href="css/main.css" />
-</head>
+  <body>
+    <!-- navigation menu -->
+    <nav></nav>
 
-<body>
-  <!-- navigation menu -->
-  <nav>
+    <!--  Onboarding -->
 
-  </nav>
-
-
-  <!--  Onboarding -->
-
-
-  <section class="page">
-    
+    <section id="onboarding1" class="page">
+      <div class="ob-background">
+        <img class="ob-img" alt="background" src="img/image5.png" />
+        <div class="ob-frame">
+          <p class="ob-intro">JUST ANOTHER DAY IN AARHUS</p>
+          <div class="ob-bottom">
+            <p>
+              Welcome to the app! <br />
+              Discover amazing places <br />
+              to visit in Aarhus
+            </p>
+            <div class="ob-nav">
+              <div class="ob-dots">
+                <div class="ob-dot active"></div>
+                <div class="ob-dot"></div>
+                <div class="ob-dot"></div>
+              </div>
+              <a href="#add" class="ob-button">
+                NEXT<img
+                  class="ob-next"
+                  alt="next arrow"
+                  src="icons/icon7.svg"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <section id="onboarding2" class="page">
+      <section id="add" class="page">
+        <div class="ob-background">
+          <img
+            class="ob-img"
+            alt="background"
+            src="img/Aarhus_Rainbow_Panorama_Aros_ar_museum_view.png"
+          />
+          <div class="ob-frame">
+            <div class="ob-bottom">
+              <p>
+                Plan your trip including <br />
+                the most popular <br />
+                attractions
+              </p>
+              <div class="ob-nav">
+                <div class="ob-dots">
+                  <div class="ob-dot"></div>
+                  <div class="ob-dot active"></div>
+                  <div class="ob-dot"></div>
+                </div>
+                <a class="ob-button">
+                  NEXT<img
+                    class="ob-next"
+                    alt="next arrow"
+                    src="icons/icon7.svg"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <section class="page">
-    
-  </section>
+      <section id="onboarding3" class="page">
+        <div class="ob-background">
+          <img
+            class="ob-img"
+            alt="background"
+            src="img/Dokk_Aarhus-scaled.png"
+          />
+          <div class="ob-frame">
+            <div class="ob-bottom">
+              <p>
+                Enjoy all sorts of activities in <br />
+                the city and visit <br />
+                recomended <br />
+                attractions near you
+              </p>
+              <div class="ob-nav">
+                <div class="ob-dots">
+                  <div class="ob-dot"></div>
+                  <div class="ob-dot"></div>
+                  <div class="ob-dot active"></div>
+                </div>
+                <a class="ob-button">
+                  START
+                  <img
+                    class="ob-next"
+                    alt="next arrow"
+                    src="icons/icon7.svg"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <!-- home page -->
+      <section id="home" class="page"></section>
 
+      <section id="map" class="page"></section>
 
+      <!--- Detailed view  -->
+      <section id="detailedView" class="page"></section>
 
-  <section class="page">
-    
-  </section>
-
-
- 
-
- 
-
-  <!-- home page -->
-  <section id="home" class="page">
-    
-  </section>
-
-
-
-<section id="map" class="page">
- 
-</section>
-
-
-
-
-  <!--- Detailed view  -->
-  <section id="detailedView" class="page">
-    
-  </section>
-
-  
-
-  <!-- Settings tab-->
-  <section id="settings" class="page">
-    
+      <!-- Settings tab-->
+      <section id="settings" class="page"></section>
     </section>
 
-  </section>
-
-
-  <!-- main js file -->
-  <script src="js/router.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
+    <!-- main js file -->
+    <script src="js/router.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
