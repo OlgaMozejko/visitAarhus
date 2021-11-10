@@ -3,7 +3,10 @@
  * "path": "id of page in DOM"
  */
 const routes = {
-  "#/": "home",
+  "#/": "onboarding1",
+  "#/2": "onboarding2",
+  "#/3": "onboarding3",
+  "#/home": "home",
   "#/map": "map",
   "#/settings": "settings",
   "#/detailedView": "detailedView",
