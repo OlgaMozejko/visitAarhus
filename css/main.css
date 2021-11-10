@@ -201,3 +201,99 @@ body {
 #activities {
   background-color: turquoise;
 } */
+
+/* ---------- onboarding styling ---------- */
+
+.ob-background {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  color: white;
+  height: 100%;
+}
+
+.ob-img {
+  position: absolute;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  width: auto;
+  z-index: -999;
+}
+
+.ob-frame {
+  border: solid white 2px;
+  position: absolute;
+  position: absolute;
+  top: 65px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.ob-intro {
+  font-weight: bold;
+  font-size: 48px;
+  text-align: left;
+  display: block;
+  position: absolute;
+  top: 0;
+}
+
+.ob-bottom {
+  position: absolute;
+  display: block;
+  bottom: 10px;
+  font: 20px bold;
+  width: 100%;
+}
+
+.ob-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.ob-dots {
+  display: flex;
+  width: 95px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ob-dot {
+  height: 21px;
+  width: 21px;
+  background-color: white;
+  border-radius: 100%;
+}
+.active {
+  height: 33px;
+  width: 33px;
+}
+
+.ob-button {
+  display: flex;
+  width: 150px;
+  height: 50px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  background-color: white;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 20px;
+}
+
+.ob-next {
+  height: 30px;
+  width: auto;
+  z-index: 999;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
