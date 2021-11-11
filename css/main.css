@@ -4,17 +4,9 @@
   --secondary-text-color: #00587a;
 }
 
+/* ---------- page styling ---------- */
 
-/* ---------- general styling ---------- */
-
-html,
-body {
-  max-width: 400px;
-  max-height: 900px;
-  margin: 0 auto;
-}
-
-/* FONT FAMILY */
+ /* FONT FAMILY */
 @font-face {
   font-family: "Visit Denmark Regular";
   src: url("/fonts/VisitDenmark-Regular.otf");
@@ -28,7 +20,25 @@ body {
   src: url("/fonts/VisitDenmark-ExtraBold.otf");
 }
 
-/* ---------- page styling ---------- */
+
+/* ---------- general styling ---------- */
+
+html,
+body {
+  max-width: 400px;
+  max-height: 900px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-family: "Visit Denmark Regular";
+  color: var(--main-text-color);
+}
+
 .page {
   display: none;
   /*min heigh is screen heigh minus height of tab and top bar */
@@ -38,3 +48,139 @@ body {
   padding: 55px 0;
 }
 
+
+
+/*--------- nav ----------*/
+
+.tabbar {
+  background-color: #fafafa;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  box-shadow: 0px 40px 60px #3D4252;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+
+.tabbar {
+  text-align: center;
+  padding: 12px 16px 10px 16px;
+  text-decoration: none;
+}
+
+
+.nav-link {
+  font-size: 0.5em;
+  font-family: urbane-rounded, sans-serif;
+  font-weight: 300;
+}
+
+.nav-link:active .a{
+  fill: #022b52;
+}
+
+.nav-link:active .b{
+  fill: #022b52;
+}
+
+.nav-link:active .c{
+  fill: #022b52;
+}
+
+
+svg {
+  height: 2rem;
+  padding-left: 1.8rem;
+  padding-right: 1.8rem;
+} 
+
+.home-icon {
+  height: 2.2rem;
+  margin-top: -3px;
+}
+
+/*--------- info -----------*/
+
+.info {
+  font-size: 30px !important;
+  text-align: center;
+}
+
+/*-------- map --------*/
+
+
+.map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: unset;
+  margin: 0 auto;
+}
+
+.marker {
+  background-image: url('/icon/icon2.png');
+  background-size: cover;
+  width: 22px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.btn-flex {
+  position: sticky;
+  top: 10px;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.btn-inner {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.btn-inner2 {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.search-btn svg{
+  width: 30px;
+  margin-left: -10px;
+}
+
+.btn {
+  height:30px;
+  background-color: transparent;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-color: #00587A !important;
+  color: #00587a;
+  text-align: center;
+}
+
+.btn-t {
+  margin-top: 5px;
+}
+
+.search-in {
+  width: 150px;
+  height: 25px;
+  background-color: white;
+  color: var(--main-text-color);
+  margin-top: 5px;
+  margin-left: -10px;
+  border: none;
+  display: none;
+}

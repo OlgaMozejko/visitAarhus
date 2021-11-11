@@ -3,16 +3,9 @@
  * "path": "id of page in DOM"
  */
 const routes = {
-  "#/": "onboarding1",
-  "#/onboarding2": "onboarding2",
-  "#/onboarding3": "onboarding3",
   "#/home": "home",
-  "#/attractions": "attractions",
-  "#/food": "food",
-  "#/activities": "activities",
   "#/map": "map",
   "#/favourites": "favourites",
-  "#/detailedView": "detailedView",
 };
 
 /**
@@ -21,7 +14,7 @@ const routes = {
 function initRouter() {
   attachNavLinkEvents();
 
-  let defaultPath = "#/";
+  let defaultPath = "#/home";
   if (routes[location.hash]) {
     defaultPath = location.hash;
   }

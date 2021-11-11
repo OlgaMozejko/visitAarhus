@@ -8,61 +8,105 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="stylesheet" href="css/main.css" />
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+  
 </head>
+
 
 <body>
   
 
-  <!--  Onboarding -->
+  <nav>
+    <div class="tabbar" id="menu">
+      <div class="menu-item">
+        <a href="#/home" class="nav-link">
+          <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 373.12 367.81"><defs><style>.a{fill:none;stroke:#022b52;stroke-miterlimit:10;stroke-width:20px;}</style>
+          </defs><path class="a" d="M6716.46,7091.51c48.88-59.86,100.59-114.64,156.73-161.43,64.93,50.67,123,104.34,173.2,161.43h-30.56l1.56,183.54H6845.77c-.43-31.6-.83-61.18-1.18-87-23.86-5.94-46.44-7-67-.37-2.37,26.76-1.89,56.21.4,87.35h-37.62l-.39-183.54Z" transform="translate(-6695.38 -6917.24)"/>
+          <line class="a" x1="45.8" y1="174.3" x2="270.51" y2="174.3"/><line class="a" x1="277.43" y1="174.25" x2="320.16" y2="174.25"/><path class="a" d="M6985.47,7192.24" transform="translate(-6695.38 -6917.24)"/>
+          <ellipse class="a" cx="126.48" cy="316.02" rx="2.7" ry="1.71"/>
+          <path class="a" d="M6895.27,7173.77V7169c5.8-43.78,57.49-45.37,67,0v55.91h-67v-40.62" transform="translate(-6695.38 -6917.24)"/></svg>
+      </a></div>
 
 
-  <section class="page">
+      <div class="menu-item">
+        <a href="#/map" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 278.21 448.07"><defs>
+            <style>.b{fill:none;stroke:#022b52;stroke-miterlimit:10;stroke-width:20px;}</style>
+          </defs><path class="b" d="M6862.83,7273.47c-165.36-194.64-188.31-422.51,0-422.51S7007.62,7098.61,6862.83,7273.47Z" transform="translate(-6720.06 -6840.96)"/>
+            <ellipse class="b" cx="140" cy="137.78" rx="63.69" ry="66.07"/></svg>
+      </a></div>
 
-  </section>
+      <div class="menu-item">
+        <a href="#/favourites" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 503.56 463.68"><defs>
+            <style>.c{fill:none;stroke:#022b52;stroke-miterlimit:10;stroke-width:20px;}</style>
+          </defs><path class="c" d="M7174.22,7052.84c-24.83-78.4-89.14-124.55-144.05-116.43-64.43,9.53-92.28,90.28-96.34,102.05-29.4,85.25,16,164.79,31.07,191.09,61.19,107.15,171.77,140.95,202.26,149.17,36.12-12.1,99.78-39.39,155-100.51,33.79-37.42,68.54-93.49,83.07-169.71,13.49-70.74-28.53-160.48-105.62-160.22C7250.58,6948.44,7197.65,6987.27,7174.22,7052.84Z" transform="translate(-6914.14 -6925.49)"/>
+          <path class="c" d="M7000.68,7174.71c20.76,51.33,53.13,87.84,94,113.53" transform="translate(-6914.14 -6925.49)"/>
+          <path class="c" d="M6983.79,7085.26a203.44,203.44,0,0,0,10.86,73.59" transform="translate(-6914.14 -6925.49)"/>
+            <path class="c" d="M6992.89,7031.5a222.73,222.73,0,0,0-8.12,40.19" transform="translate(-6914.14 -6925.49)"/></svg>
+      </a></div>
+    </div>
+  </nav>
 
-  <section class="page">
 
-    </section>
-
-    <section class="page">
-      
-    </section>
 
 
  
   <!-- home page -->
   <section id="home" class="page">
-
+     <p class="info">MAP concept <br> for a <br> City travel APP <br><br><br>
+     navigate to <br> map section</p>
   </section>
 
 
-
+  <!-- map page -->
 
 <section id="map" class="page">
- 
+   <div class="btn-flex">
+     <div class="btn-inner">
+  <button class="btn"><p class="btn-t">ALL</p></button>
+  <button class="btn"><p class="btn-t">ATTRACTIONS</p></button>
+  <button class="btn"><p class="btn-t">FOOD</p></button>
+  <button class="btn"><p class="btn-t">ACTIVITIES</p></button>
+</div>
+<div class="btn-inner2">
+  <div class="search-btn" onclick="searchOPT()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 684.63 774.41"><defs><style>.a{fill:none;stroke:#022b52;stroke-miterlimit:10;stroke-width:20px;}</style></defs>
+      <path class="a" d="M7347.38,7290.86c84.7-97.51,96.34-235.6,20.89-329-85.93-106.41-252.3-114.56-371.6-18.22s-146.34,260.7-60.41,367.11c73.63,91.16,206.3,110.21,317.82,53.2,71.32,82.42,134,169.54,180.79,263.54,45.28-22,83-51.76,112-90.47C7464.12,7469.49,7396.14,7388.83,7347.38,7290.86Z" transform="translate(-6876.04 -6866.38)"/>
+      <path class="a" d="M6943.41,7207.5c-16.11-76.66,16.62-165.76,90.35-225.3,99.27-80.17,235.27-76.4,303.77,8.42s43.56,218.57-55.71,298.74-235.27,76.39-303.77-8.43a170.54,170.54,0,0,1-26.52-45.94" transform="translate(-6876.04 -6866.38)"/>
+      <path class="a" d="M7348.14,7131.57q-.37,4.13-.9,8.34" transform="translate(-6876.04 -6866.38)"/>
+      <path class="a" d="M7348.67,7099.46c.34,5.55.46,11.24.33,17.07" transform="translate(-6876.04 -6866.38)"/>
+      <path class="a" d="M7330.22,7031.92a160.84,160.84,0,0,1,17.41,56.28" transform="translate(-6876.04 -6866.38)"/></svg>
+  </div>
+  <input type="search" class="search-in" id="searchbar" placeholder="search..."></input>
+</div>
+  </div>
+
 </section>
 
 
 
 
-  <!--- Detailed view  -->
-  <section id="detailedView" class="page">
-    
-  </section>
+
 
   
 
-  <!-- Settings tab-->
-  <section id="settings" class="page">
-    
+  <!-- fav tab-->
+  <section id="favourites" class="page">
+        
+       <p style="text-align: center;"> work in progress</p>
+
     </section>
 
-  </section>
 
 
   <!-- main js file -->
   <script src="js/router.js"></script>
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+
   <script src="js/main.js"></script>
+
 </body>
 
 </html>
