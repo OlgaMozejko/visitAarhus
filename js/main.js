@@ -166,7 +166,9 @@ function appendAttractions(attractions) {
       let img = attraction.Files[images]["Uri"];
       html += `
       <img src='${img}'/>
-      <h2>${attraction.Name}</h2>
+      <div class='banner'>
+        <h2>${attraction.Name}</h2>
+      </div>
     `;
     }
   }
@@ -196,7 +198,9 @@ function appendRestaurants(restaurants) {
       let img = restaurant.Files[images]["Uri"];
       html += `
       <img src='${img}'/>
-      <h2>${restaurant.Name}</h2>
+      <div class='banner'>
+        <h2>${restaurant.Name}</h2>
+      </div>
     `;
     }
   }
@@ -226,7 +230,9 @@ function appendActivities(events) {
       let img = event.Files[images]["Uri"];
       html += `
       <img src='${img}'/>
-      <h2>${event.Name}</h2>
+      <div class='banner>
+        <h2>${event.Name}</h2>
+      </div>
     `;
     }
   }
