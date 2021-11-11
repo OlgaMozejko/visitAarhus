@@ -24,7 +24,7 @@
     <!--  -->
   <!-- Top navigation menu -->
   <nav class="top-nav">
-    <a href="#/" class="nav-link"><li>All</li></a>
+    <a href="#/detailedView" class="nav-link"><li>All</li></a>
     <a href="#/attractions" class="nav-link"><li>Attractions</li></a>
     <a href="#/food" class="nav-link"><li>Food</li></a>
     <a href="#/activities" class="nav-link"><li>Activities</li></a>
@@ -33,9 +33,9 @@
 <!-- BOTTOM NAVIGATION MENU -->
   <nav class="bottom-nav">
     <div class="nav-items">
-      <a href=""><img src="./images/home.svg" alt="home"></a>
+      <a href="#/"><img src="./images/home.svg" alt="home"></a>
       <a href=""><img src="./images/map.svg" alt="map"></a>
-      <a href=""><img src="./images/favourites.svg" alt="home"></a>
+      <a href="#/detailedView"><img src="./images/favourites.svg" alt="home"></a>
     </div>
   </nav>
 
@@ -67,7 +67,7 @@
   </section>
   <!-- Attractions -->
   <section id="attractions" class="page">
-    <div class="attractions-container"></div>
+    <a href="#/detailedView"><div class="attractions-container"></div></a>
   </section>
   <!-- FOOD -->
   <section id="food" class="page">
@@ -90,6 +90,49 @@
   <!--- Detailed view  -->
   <section id="detailedView" class="page">
     
+    <div class="detailed-img-container">
+      <div class="showcase">
+        <svg class="back-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393.53 455.43"><defs><style>.a{fill:#022b52;stroke:#022b52;stroke-miterlimit:10;stroke-width:20px;}</style></defs><path class="a" d="M7152.75,7051.53c28.64,4.95,51.75,12,67.31,22,0,0-264.43,165.29-267.91,195.44s267.91,195.15,267.91,195.15c-14.37,11.28-37.14,18.46-67.31,22,0,0-297.53-170.23-297.53-216.91S7152.75,7051.53,7152.75,7051.53Z" transform="translate(-6845.22 -7041.06)"/></svg>
+        <img src="./images/favourites.svg" class="favourites-logo" alt="favourites">
+        <h1 class="main-header">Aros Museum</h1>
+      </div>
+    </div>
+
+    <div class="detailed-content">
+      
+      <div class="info">
+        <img src="/images/location-logo.png" class="location-logo" alt="location logo">
+        <h1 class="location">Aarhus C, 8000</h1><img src="/images/star-rating.png" class="star-rating2" alt="5 star rating">
+        <h2 class="info-header">Aros Museum is a must-see attraction and at the same time an architecture highlight in Denmark</h2>
+        <p class="info-p">It is in one of the largest museums in the Nordic countries and on the roof, you can experience an amazing
+          Rainbow panorama tour. It is a 150 metre long circular panoramic path with 360 degrees view of the surrounding Aarhus city.</p>
+      </div>
+      
+      <div class="reviews">
+      <h1 class="review-header">What others have to say about it:</h1>
+      <div class="review1">
+      <h2 class="review-name">Mark</h2>
+      <img src="./images/star-rating.png" class="star-rating" alt="5 star rating">
+      <p class="review-p">It is in one of the largest museums in the Nordic countries and on the roof, you can experience an
+      amazing Rainbow panorama tour.</p>
+    </div>
+    </div>
+
+    <div class="leave-review">
+      <h1 class="lr-header">Leave a review</h1>
+      <h2 class="lr-h2">Rating</h2>
+      <img src="./images/unfilled-stars.png" class="lr-stars" alt="star ratings">
+      <form class="lr-form">
+        <label for="name">Name</label><br>
+        <input class="input-text" type="text" id="name" name="name" value="  Your name"><br>
+        <label for="message">Message</label><br>
+        <input class="input-text2" type="text" id="message" name="message" value="  Message"><br>
+        <input class="submit-button" type="submit" value="   Submit">
+      </form> 
+    </div>
+
+    </div>
+
   </section>
 
   

@@ -4,6 +4,9 @@ let _attractions = [];
 let _food = [];
 let _activities = [];
 
+const _dataUrl = "/data/data.json";
+let _detailedViewData = [];
+
 // DISPLAYING ATTRACTIONS
 async function loadAttractions() {
   const url = _categoriesUrl;
@@ -69,4 +72,39 @@ function appendActivities(categories) {
       `;
   }
   container.innerHTML = html;
+}
+
+// DISPLAYING DETAILED VIEW PAGE CONTENT
+
+async function loadDetailedPageData() {
+  const url = _dataUrl;
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
+  _detailedViewData = data;
+  appendDetailedViewData(_detailedViewData)
+}
+loadDetailedPageData();
+/* Appending doesn't work
+ function appendDetailedViewData(datas) {
+  const container = document.querySelector(".detailed-img-container");
+  let html = "";
+  for (const data of datas) {
+    html +=`
+        <img src='${data.Uri}'>
+        <h1>${data.Name}</h1>
+    `;
+  }
+  container.innerHTML = html;
+} */
+
+function showDetailedPage(Id) {
+    const dataToShow = _detailedViewData.find(data => data.Id === Id);
+    navigateTo("detailedView");
+    document.querySelector("detailed-img-container").innerHTML = /*html*/`
+    <article>
+    <img src='${dataToShow.Uri}'>
+    <h1>${dataToShow.Name}</h1>
+    </article>
+    `;
 }
