@@ -1,9 +1,12 @@
+// It is only template now. I tried merging other's branches to make favorites page work but it didn't really work and was too chaotic for me to make any sense out of it
+
+
 let _favPlaces = [];
 
 /* ---------- place Fav Functionality ---------- */
 
 /**
- * Appending fav Places to the DOM by looping through _favPlaces
+ * Appending fav places to the DOM by looping through _favPlaces
  */
  function appendFavPlaces() {
     let html = "";
@@ -12,7 +15,7 @@ let _favPlaces = [];
       html += /*html*/`
         <article>
           
-          <img src="${place.img}">
+          <img src="${place.ImageUrl}">
           <h2>${place.Name}</h2>
           <p>${place.category}</p>
           <p>${place.Address}</p>
