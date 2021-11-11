@@ -148,12 +148,13 @@ async function fetchAttractions() {
   const response = await fetch("data/data.json");
   const data = await response.json();
   _allCategories = data;
-  // console.log(_allCategories);
   let newArray = _allCategories.filter((category) => {
     return category.MainCategory.Name === "Attractions";
   });
-  _attractions = newArray;
-  console.log(_attractions);
+  let address = newArray.filter((address) => {
+    return address.Address.PostalCode === "8000";
+  });
+  _attractions = address;
   appendAttractions(_attractions);
 }
 fetchAttractions();
@@ -177,12 +178,13 @@ async function fetchRestaurants() {
   const response = await fetch("data/data.json");
   const data = await response.json();
   _allCategories = data;
-  console.log(_allCategories);
   let newArray = _allCategories.filter((category) => {
     return category.MainCategory.Name === "Places to eat";
   });
-  _restaurants = newArray;
-  console.log(_restaurants);
+  let address = newArray.filter((address) => {
+    return address.Address.PostalCode === "8000";
+  });
+  _restaurants = address;
   appendRestaurants(_restaurants);
 }
 fetchRestaurants();
@@ -206,12 +208,13 @@ async function fetchActivities() {
   const response = await fetch("data/data.json");
   const data = await response.json();
   _allCategories = data;
-  console.log(_allCategories);
   let newArray = _allCategories.filter((category) => {
     return category.MainCategory.Name === "Events";
   });
-  _activities = newArray;
-  console.log(_activities);
+  let address = newArray.filter((address) => {
+    return address.Address.PostalCode === "8000";
+  });
+  _activities = address;
   appendActivities(_activities);
 }
 fetchActivities();
