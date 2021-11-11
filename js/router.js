@@ -4,8 +4,8 @@
  */
 const routes = {
   "#/": "onboarding1",
-  "#/2": "onboarding2",
-  "#/3": "onboarding3",
+  "#/onboarding2": "onboarding2",
+  "#/onboarding3": "onboarding3",
   "#/home": "home",
   "#/map": "map",
   "#/settings": "settings",
@@ -44,7 +44,7 @@ function attachNavLinkEvents() {
 /**
  * Navigating SPA to specific page by given pathnameß
  */
-export function navigateTo(pathname) {
+function navigateTo(pathname) {
   hideAllPages();
   const basePath = location.pathname.replace("index.html", "");
   window.history.pushState({}, pathname, basePath + pathname);
