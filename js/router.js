@@ -14,7 +14,7 @@ const routes = {
 function initRouter() {
   attachNavLinkEvents();
 
-  let defaultPath = "#/home";
+  let defaultPath = "#/map";
   if (routes[location.hash]) {
     defaultPath = location.hash;
   }

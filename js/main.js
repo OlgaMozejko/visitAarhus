@@ -11,160 +11,226 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoib2xnYW5kaW5lIiwiYSI6ImNrdnYwcjl4bmJzdzgybnM3a
 });
 
 
-const geojson = {
-    type: 'FeatureCollection',
-    features: [
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [10.1997, 56.1539]
-        },
-        properties: {
-          title: 'Mapbox',
-          description: 'AROS'
-        }
-      },
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [10.2183349, 56.124666]
-        },
-        properties: {
-          title: 'Mapbox',
-          description: 'the Infinite Bridge'
-        }
-      },
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [10.2199, 56.1204]
-        },
-        properties: {
-          title: 'Mapbox',
-          description: 'Dyrehave'
-        }
-      },
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [10.2152, 56.1387]
-        },
-        properties: {
-          title: 'Mapbox',
-          description: 'Båd Cafe'
-        }
-      },
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [10.2093, 56.1515]
-        },
-        properties: {
-          title: 'Mapbox',
-          description: 'Street Food'
-        }
-      },
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [10.2144, 56.1536]
-        },
-        properties: {
-          title: 'Mapbox',
-          description: 'DOKK 1'
-        }
-      }
-    ]
-  };
-  
-  for (const feature of geojson.features) {
-    // create a HTML element for each feature
-    const el = document.createElement('div');
-    el.className = 'marker';
-  
-    // make a marker for each feature and add to the map
-    new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
 
-    
-  }
+map.on('load', () => {
 
+  map.addSource('attractions', {
 
-  
-
-  function searchOPT() {
-    var x = document.getElementById('searchbar');
-    if (x.style.display === 'none') {
-      x.style.display = 'block';
-    } else {
-      x.style.display = 'none';
+  'type': 'geojson',
+  'data': {
+  "type": "FeatureCollection",
+  "features": [
+  {
+  "type": "Feature",
+    "properties": {
+  "title":
+  "<strong>AROS</strong><p>museum</p>"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [10.1997, 56.1539]
     }
-  } 
+  },
+  {
+  "type": "Feature",
+  "properties": {
+    "title":
+    "<strong>DOKK1</strong><p>architecture</p>",
+  },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [10.2144, 56.1536]
+  }
+  },
+  {
+  "type": "Feature",
+  "properties": {
+    "title":
+    "<strong>Den Gamble By</strong><p>museum</p>",
+    },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [10.1921, 56.1588]
+  }
+  },
+  ]
+  }
+  });
+
   
-    
-
-
-// fetch and append of the data from the visit denmark data source
-//converting into geojson 
-
-/*
-var _geolocations = [];
-var _info = [];
-
-async function getAll() {
-    let response = await fetch("./data/data.json");
-    let data = await response.json();
-    console.log(data);
-    _info = data;
-    for (let i=0; i <= 582 ; i++) {
-        let element = [
-        {
-        type: 'Feature',
-        geometry: {
-            type: 'Point',
-            coordinates: [_info.Address.GeoCoordinate.Latitude, _info.Address.GeoCoordinate.Longitude]
-        },
-        properties: {
-            title: 'Mapbox',
-            description: _info.Name
-        }
-    }];
-    _geolocations.push(element);
-    
-}
-console.log(_geolocations);
-
-}
-
-getAll();
-
-
-*/
-
-
-
-
-
-
-
-/*    controls:
-const nav = new mapboxgl.NavigationControl({
-    visualizePitch: true,
+    map.addSource('food', {
+  
+    "type": "geojson",
+    "data": {
+    "type": "FeatureCollection",
+    "features": [
+    {
+    "type": "Feature",
+    "geometry": {
+    "type": "Point",
+    "coordinates": [10.2093, 56.1515]
+    },
+    "properties": {
+      "title":
+      '<strong>Street Food</strong><p>restaurants</p>',
+    }
+    },
+    {
+    "type": "Feature",
+    "geometry": {
+    "type": "Point",
+    "coordinates": [10.2152, 56.1387]
+    },
+    "properties": {
+      "title":
+      "<strong>Båd Cafe</strong><p>cafe</p>",
+     }
+    },
+    {
+    "type": "Feature",
+    "geometry": {
+    "type": "Point",
+    "coordinates": [10.2110421, 56.153872]
+    },
+    "properties": {
+      "title":
+      "<strong>Klokken</strong><p>restaurant</p>",
+      }
+    },
+    ]
+    }
     });
 
-
-
-    map.addControl(nav, 'bottom-right',);
     
+      map.addSource('activities', {
+    
+      "type": "geojson",
+      "data": {
+      "type": "FeatureCollection",
+      "features": [
+      {
+      "type": "Feature",
+      "geometry": {
+      "type": "Point",
+      "coordinates": [10.2199, 56.1204]
+      },
+      "properties": {
+        "title":
+        "<strong>Dyrehave</strong><p>park</p>",
+        }
+      },
+      {
+      "type": "Feature",
+      "geometry": {
+      "type": "Point",
+      "coordinates": [10.2183349, 56.124666]
+      },
+      "properties": {
+        "title":
+        "<strong>the Infinite Bridge</strong><p>beach</p>",
+        }
+      },
+      {
+      "type": "Feature",
+      "geometry": {
+      "type": "Point",
+      "coordinates": [10.1979, 56.1366]
+      },
+      "properties": {
+        "title":
+        "<strong>Tivoli Friheden</strong><p>amusment park</p>",
+        },
+      },
+      ]
+      }
+      });
 
-*/
 
+  map.addLayer({
+  'id': 'attractions',
+  'type': 'circle',
+  'source': 'attractions',
+  'layout': {
+  
+  'visibility': 'visible'
 
-//secret api code for mapbox
-// sk.eyJ1Ijoib2xnYW5kaW5lIiwiYSI6ImNrdnV2OHpyZDE1dDEyb2x5bWk1cDFvMnQifQ.LiKbV7vb8LRvObd1u51IXQ
+  },
+  });
+
+  map.addLayer({
+    'id': 'food',
+    'type': 'circle',
+    'source': 'food',
+    'layout': {
+    
+    'visibility': 'visible'
+  
+    },
+    });
+
+    map.addLayer({
+      'id': 'activities',
+      'type': 'circle',
+      'source': 'activities',
+      'layout': {
+      
+      'visibility': 'visible'
+    
+      },
+      });
+
+    });
+
+      map.on('idle', () => {
+        // If these two layers were not added to the map, abort
+        if (!map.getLayer('attractions') || !map.getLayer('food') || !map.getLayer('activities')) {
+        return;
+        }
+         
+        // Enumerate ids of the layers.
+        const toggleableLayerIds = ['attractions', 'food', 'activities'];
+         
+        // Set up the corresponding toggle button for each layer.
+        for (const id of toggleableLayerIds) {
+        // Skip layers that already have a button set up.
+        if (document.getElementById(id)) {
+        continue;
+        }
+         
+        // Create a link.
+        const link = document.createElement('a');
+        link.id = id;
+        link.href = '#';
+        link.textContent = id;
+        link.className = 'active';
+         
+        // Show or hide layer when the toggle is clicked.
+        link.onclick = function (e) {
+        const clickedLayer = this.textContent;
+        e.preventDefault();
+        e.stopPropagation();
+         
+        const visibility = map.getLayoutProperty(
+        clickedLayer,
+        'visibility'
+        );
+         
+        // Toggle layer visibility by changing the layout object's visibility property.
+        if (visibility === 'visible') {
+        map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+        this.className = '';
+        } else {
+        this.className = 'active';
+        map.setLayoutProperty(
+        clickedLayer,
+        'visibility',
+        'visible'
+        );
+        }
+        };
+         
+        const layers = document.getElementById('menu1');
+        layers.appendChild(link);
+        }
+        });
 
