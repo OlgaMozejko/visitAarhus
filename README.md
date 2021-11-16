@@ -4,10 +4,10 @@
 visit Denmark app concept
 
 by:
-Olga Mozejko
-Roberto Enea
-Karolina Krysiak
-Marcell Ilyes
+Olga Mozejko;
+Roberto Enea;
+Karolina Krysiak;
+Marcell Ilyes;
 
 
 
