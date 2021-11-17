@@ -54,8 +54,10 @@
  
   <!-- home page -->
   <section id="home" class="page">
-     <p class="info">MAP concept <br> for a <br> City travel APP <br><br><br>
-     navigate to <br> map section</p>
+     <p class="info">MAP concept <br> for a <br> City travel APP <br><br>
+    navigate to map <br><br><br><br>photo carousel concept for front page<br><br>navigate to favourites</br></p>
+    
+  
   </section>
 
 
@@ -63,7 +65,8 @@
 
 <section id="map" class="page">
 
-  <nav id="menu1" class="menu1"></nav>
+  <div id="menu1" class="menu1"></div>
+
 
 </section>
 
@@ -77,7 +80,19 @@
   <!-- fav tab-->
   <section id="favourites" class="page">
         
-       <p style="text-align: center;"> work in progress</p>
+    <section id="carousel">
+      <div id="carouselIndicators">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15px" height="15px" viewBox="0 0 15 15" data-card="glacier" id="indicator1" onclick="rotate.indicatorClick(this)">
+          <circle fill="#fff" stroke="#fff" stroke-width="3" cx="7.5" cy="7.5" r="6"/>
+        </svg>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15px" height="15px" viewBox="0 0 15 15" data-card="wheat" id="indicator2" onclick="rotate.indicatorClick(this)">
+          <circle fill="transparent" stroke="#fff" stroke-width="3" cx="7.5" cy="7.5" r="6"/>
+        </svg>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15px" height="15px" viewBox="0 0 15 15" data-card="market" id="indicator3" onclick="rotate.indicatorClick(this)">
+          <circle fill="transparent" stroke="#fff" stroke-width="3" cx="7.5" cy="7.5" r="6"/>
+        </svg>
+      </div>
+    </section>
 
     </section>
 
@@ -89,6 +104,8 @@
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
 
   <script src="js/main.js"></script>
+
+  <script src="js/carousel.js"></script>
 
 </body>
 

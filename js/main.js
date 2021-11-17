@@ -7,13 +7,19 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoib2xnYW5kaW5lIiwiYSI6ImNrdnYwcjl4bmJzdzgybnM3a
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [10.2039, 56.1629],
-    zoom: 10,
+    zoom: 11,
 });
 
 
 
 map.on('load', () => {
 
+  map.loadImage(
+    '../icon/icon2.png',
+    (error, image) => {
+      if (error) throw error;
+      if (!map.hasImage('mine')) map.addImage('mine', image);
+  
   map.addSource('attractions', {
 
   'type': 'geojson',
@@ -144,42 +150,62 @@ map.on('load', () => {
       ]
       }
       });
-
+    
 
   map.addLayer({
   'id': 'attractions',
-  'type': 'circle',
+  'type': 'symbol',
   'source': 'attractions',
   'layout': {
-  
-  'visibility': 'visible'
-
-  },
+    'icon-image': 'mine',
+    'icon-allow-overlap': true,
+    'icon-size': 0.015,
+    'visibility': 'visible',
+    'icon-pitch-alignment': 'viewport',
+    },
+    'paint': {
+      'icon-translate': [0, 40],
+    }
   });
 
   map.addLayer({
     'id': 'food',
-    'type': 'circle',
+    'type': 'symbol',
     'source': 'food',
     'layout': {
-    
-    'visibility': 'visible'
-  
-    },
+      'icon-image': 'mine',
+      'icon-allow-overlap': true,
+      'icon-size': 0.015,
+      'visibility': 'visible',
+      'icon-pitch-alignment': 'viewport',
+      },
+      'paint': {
+        'icon-translate': [0, 40],
+      }
     });
 
     map.addLayer({
       'id': 'activities',
-      'type': 'circle',
+      'type': 'symbol',
       'source': 'activities',
       'layout': {
-      
-      'visibility': 'visible'
-    
+      'icon-image': 'mine',
+      'icon-allow-overlap': true,
+      'icon-size': 0.015,
+      'visibility': 'visible',
+      'icon-pitch-alignment': 'viewport',
       },
+      'paint': {
+        'icon-translate': [0, 40],
+      }
       });
 
-    });
+
+
+    }); });  
+
+    // add layers to the menus
+
 
       map.on('idle', () => {
         // If these two layers were not added to the map, abort
@@ -232,5 +258,148 @@ map.on('load', () => {
         const layers = document.getElementById('menu1');
         layers.appendChild(link);
         }
+
+
+
+         //       pop-ups 
+
+
+        map.on('click', 'activities', (e) => {
+          // Copy coordinates array.
+          const coordinates = e.features[0].geometry.coordinates.slice();
+          const title = e.features[0].properties.title;
+           
+          // Ensure that if the map is zoomed out such that multiple
+          // copies of the feature are visible, the popup appears
+          // over the copy being pointed to.
+          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+          }
+           
+          new mapboxgl.Popup()
+          .setLngLat(coordinates)
+          .setHTML(title)
+          .addTo(map);
+          });
+           
+          // Change the cursor to a pointer when the mouse is over the places layer.
+          map.on('mouseenter', 'activities', () => {
+          map.getCanvas().style.cursor = 'pointer';
+          });
+           
+          // Change it back to a pointer when it leaves.
+          map.on('mouseleave', 'activities', () => {
+          map.getCanvas().style.cursor = '';
+          });
+          
+
+
+          map.on('click', 'food', (e) => {
+            // Copy coordinates array.
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const title = e.features[0].properties.title;
+             
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+             
+            new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(title)
+            .addTo(map);
+            });
+             
+            // Change the cursor to a pointer when the mouse is over the places layer.
+            map.on('mouseenter', 'food', () => {
+            map.getCanvas().style.cursor = 'pointer';
+            });
+             
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'food', () => {
+            map.getCanvas().style.cursor = '';
+            });
+
+
+
+            map.on('click', 'attractions', (e) => {
+              // Copy coordinates array.
+              const coordinates = e.features[0].geometry.coordinates.slice();
+              const title = e.features[0].properties.title;
+
+              
+               
+              // Ensure that if the map is zoomed out such that multiple
+              // copies of the feature are visible, the popup appears
+              // over the copy being pointed to.
+              while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+              coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+              }
+               
+              new mapboxgl.Popup()
+              .setLngLat(coordinates)
+              .setHTML(title)
+              .addTo(map);
+              });
+               
+              // Change the cursor to a pointer when the mouse is over the places layer.
+              map.on('mouseenter', 'attractions', () => {
+              map.getCanvas().style.cursor = 'pointer';
+              });
+               
+              // Change it back to a pointer when it leaves.
+              map.on('mouseleave', 'attractions', () => {
+              map.getCanvas().style.cursor = '';
+              });
+
+
+
+
+
+
         });
 
+
+
+
+
+
+
+
+      // fetch and append of the data from the visit denmark data source
+//converting into geojson 
+
+/*
+var _geolocations = [];
+var _info = [];
+
+async function getAll() {
+    let response = await fetch("./data/data.json");
+    let data = await response.json();
+    console.log(data);
+    _info = data;
+    for (let i=0; i <= 582 ; i++) {
+        let element = [
+        {
+        type: 'Feature',
+        geometry: {
+            type: 'Point',
+            coordinates: [_info.Address.GeoCoordinate.Latitude, _info.Address.GeoCoordinate.Longitude]
+        },
+        properties: {
+            title: 'Mapbox',
+            description: _info.Name
+        }
+    }];
+    _geolocations.push(element);
+    
+}
+console.log(_geolocations);
+
+}
+
+getAll();
+
+*/
